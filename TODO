@@ -1,0 +1,12 @@
+TODO @ 2019.09.06
+
+- "@types/mysql2": "github:types/mysql2"
+  在 Dockerfile build 的過程會失敗
+
+  目前的處理方法：
+  
+  1. 刪除 package.json 中 devDependencies 的 "@types/mysql2"
+  
+  2. 在本地端開發使用 mysql2 時，再用指令安裝：
+     npm install types/mysql2 --save-dev
+     準備 build docker image 前，再自行刪除 "@types/mysql2": "github:types/mysql2"
